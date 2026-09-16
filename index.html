@@ -775,6 +775,29 @@ Set |cryptosuite|.|verifyProof| to the algorithm in Section
           </li>
 
           <li>
+If |options|.|cryptosuite| is listed in [[[#SDCryptosuiteTable]]] then:
+            <ol class="algorithm">
+              <li>
+Set the values of the parameters `approach`, `hashName`, `sigFunc`, and
+`verifyFunc`, as indicated in the corresponding
+column in the [[[#SDCryptosuiteTable]]].
+              </li>
+              <li>
+Set |cryptosuite|.|createBaseProof| to the algorithm in Section
+[[[VC-DATA-INTEGRITY-1.1#create-base-proof]]] passing in the above parameters.
+              </li>
+              <li>
+Set |cryptosuite|.|addDerivedProof| to the algorithm in Section
+[[[VC-DATA-INTEGRITY-1.1#add-derived-proof]]] passing in the above parameters.
+              </li>
+              <li>
+Set |cryptosuite|.|verifyDerivedProof| to the algorithm in Section
+[[[VC-DATA-INTEGRITY-1.1#verify-derived-proof]]] passing in the above parameters.
+              </li>
+            </ol>
+          </li>
+
+          <li>
 Return |cryptosuite|.
           </li>
         </ol>
@@ -1172,74 +1195,61 @@ family of SQIsign cryptosuites given in [[[#SQISuitesTable]]].
 
       </section>
       <section id="SelectiveDisclosure">
-        <h3>Selective Disclosure Cryptosuites for Quantum Safe Signatures</h3>
+        <h3>Selective Disclosure Cryptosuites for Quantum Resistant Signatures</h3>
         <p class="informative">
-This section provides algorithms for a relatively efficient approach to enabling
-<em>selective disclosure</em> of a verifiable credential protected by a quantum
-safe signature algorithm. This approach utilizes a single quantum safe signature
-while sharing additional information concerning the cryptographic hashes of the
-processed <em>claims</em>. This contrasts with the approach taken in [[VC-DI-ECDSA]]
-selective disclosure where a short signature is given for each processed
-<em>claim</em> and no additional hashes are shared. This also contrasts with the
-approach in [[VC-DI-BBS]] where the underlying signature scheme supports
-multiple <em>claims</em> and only a single short signature is shared.
+The [[VC-DATA-INTEGRITY-1.1]] specification defines [=selective disclosure=] and
+defines common algorithms for implementing [=selective disclosure=] where the
+signature scheme does not natively support it.  Two general <em>approaches</em>
+are defined (1) Signed Individual Claims ([=SIC=]) and (2) Salted Hash of Claims
+([=SHoC=]). The size of the signature impacts the overall base and derived proof
+sizes as indicated in [[[VC-DATA-INTEGRITY-1.1#SDApproachTable]]]. For large
+signature sizes the [=SHoC=] approach would be used.
         </p>
-        <p class="informative">
-In all the approaches to selective disclosure mentioned above the same core set
-of selective disclosure processing functions contained in [[VC-DI-ECDSA]] are
-utilized which enables flexibility and efficiency in implementations.
-The approach taken here is roughly more efficient when a signature is longer
-than twice the size of the
-corresponding hash for a given security level, e.g., 64 bytes for security
-category 1 or 2.  From [[[#CryptosuiteTable]]] we can see that this condition is
-true for all signature algorithms currently considered in this specification.
-        </p>
-        <p class="ednote">
-The general selective disclosure functions in [[VC-DI-ECDSA]] are planned to be
-moved to an updated version of  [[VC-DATA-INTEGRITY]].
-        </p>
-        <p class="informative">
-Selective disclosure is enabled by the <em>issuer</em> creating a <em>base</em>
-proof as specified in section [[[#SD-Base]]]. The <em>issuer</em> can specify
-that certain claims are mandatory, i.e., have to be revealed to the
-<em>verifier</em>. The <em>holder</em> on receiving the issued verifiable
-credential with the <em>base</em> proof, uses it to create a related verifiable
-credential whose <em>claims</em> are a selected subset of <em>claims</em> from
-the received document. This is done with the algorithm of section
-[[[#SD-Derived]]]. Finally the <em>verifier</em> uses the algorithm of section
-[[[#SD-Verify-Derived]]] to verify the selectively disclosed verifiable
-credential.
-        </p>
+
+        <p>
 The selective disclosure cryptosuites defined in this specification are  listed
 in  [[[#SDCryptosuiteTable]]]. Note that all selective disclosure cryptosuites
 utilize the advanced features of [[RDF-CANON]].
-        <p>
-
         </p>
         <table id="SDCryptosuiteTable" class="data numbered">
             <caption><em>Selective Disclosure Cryptosuites.</em> </caption>
             <thead>
               <tr>
                 <th>Name</th>
+                <th>SD Approach</th>
                 <th>Signature Algorithm</th>
                 <th>Signature Length</th>
+                <th>Details</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>`mldsa44-sd-2024`</td>
+                <td>[=SHoC=]</td>
                 <td>ML-DSA-44</td>
                 <td>2420</td>
+                <td><a href="#MLDSA_Cryptosuites">ML-DSA</a></td>
               </tr>
               <tr>
                 <td>`slhdsa128-sd-2024`</td>
+                <td>[=SHoC=]</td>
                 <td>SLH-DSA-SHA2-128s</td>
                 <td>7856</td>
+                <td><a href="#SLHDSA_Cryptosuites">SLH-DSA</a></td>
               </tr>
               <tr>
                 <td>`falcon512-sd-2024`</td>
+                <td>[=SIC=] or [=SHoC=]</td>
                 <td>FALCON-512</td>
                 <td>666</td>
+                <td><a href="#Falcon_Cryptosuites">FALCON</a></td>
+              </tr>
+              <tr>
+                <td>`sqisign1-sd-2024`</td>
+                <td>[=SIC=]</td>
+                <td>SQISign-I</td>
+                <td>148</td>
+                <td><a href="#SQISign_Cryptosuites">SQIsign</a></td>
               </tr>
             </tbody>
           </table>
