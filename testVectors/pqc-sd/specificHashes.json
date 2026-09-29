@@ -7,5 +7,8 @@
   },
   "falcon512-sd-2024": {
     "proofHash": "6619ddc3de75f7c879ac5352449e3a07188e7a8f7b4c7eb92c4efc6b909bb130"
+  },
+  "sqisign1-sd-2024": {
+    "proofHash": "bc66a3bfe1c3b9b80dfab43f876d4852f30979b41cd1b8398084ee1e267af189"
   }
 }
