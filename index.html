@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>Quantum-Resistant Cryptosuites v1.0</title>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <!--
       === NOTA BENE ===
       For the three scripts below, if your spec resides on dev.w3 you can check them
@@ -301,6 +301,27 @@ Terminology used throughout this document is defined in the
 [[[VC-DATA-INTEGRITY]]] specification.
         </p>
 
+        <p>
+          The following terms name modifications of the [=selective disclosure=] approaches
+          defined in [[VC-DATA-INTEGRITY-1.1]]. They are expected to be enumerated as new
+          or modified approaches in that specification.
+        </p>
+
+        <dl class="termlist">
+          <dt><dfn>SHoC-MerkleTree</dfn></dt>
+          <dd>
+            The [=SHoC=] approach with the flat list of salted claim hashes replaced by a
+            Merkle tree over those hashes. The base proof signs the Merkle root, and a
+            derived proof carries the salts of the disclosed claims and a subtree proof.
+          </dd>
+          <dt><dfn>SIC-batched-issuance</dfn></dt>
+          <dd>
+            The [=SIC=] approach where the issuer creates a batch of base proofs for the
+            same document, and the holder uses each base proof for exactly one
+            presentation. A batch can contain a single base proof.
+          </dd>
+        </dl>
+
       </section>
 
       <section id="conformance">
@@ -418,7 +439,7 @@ expression of a public key.
                 <td>SQIsign-I<sup>*</sup></td>
                 <td>0x122e</td>
                 <td>0xae24</td>
-                <td>65</td>
+                <td>83</td>
               </tr>
             </tbody>
           </table>
@@ -493,7 +514,7 @@ private key).
                 <td>SQIsign-I<sup>**</sup></td>
                 <td>0x1322</td> <!--Not submitted to multicoded yet -->
                 <td>0xa226</td>
-                <td>353</td>
+                <td>270</td>
               </tr>
             </tbody>
           </table>
@@ -564,6 +585,7 @@ disclosure cryptosuites.
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Canonization </th>
                 <th>Signature Algorithm</th>
                 <th>Signature Length</th>
                 <th>Details</th>
@@ -572,90 +594,106 @@ disclosure cryptosuites.
             <tbody>
               <tr>
                 <td>`mldsa44-rdfc-2024`</td>
+                <td>RDFC</td>
                 <td>ML-DSA-44</td>
                 <td>2420</td>
                 <td><a href="#MLDSA_Cryptosuites">ML-DSA</a></td>
               </tr>
               <tr>
                 <td>`mldsa44-jcs-2024`</td>
+                <td>JCS</td>
                 <td>ML-DSA-44</td>
                 <td>2420</td>
                 <td><a href="#MLDSA_Cryptosuites">ML-DSA</a></td>
               </tr>
               <!-- <tr>
                 <td>`mldsa65-rdfc-2024`</td>
+                <td>RDFC</td>
                 <td>ML-DSA-65</td>
                 <td>3309</td>
               </tr>
               <tr>
                 <td>`mldsa65-jcs-2024`</td>
+                <td>JCS</td>
                 <td>ML-DSA-65</td>
                 <td>3309</td>
               </tr>
               <tr>
                 <td>`mldsa87-rdfc-2024`</td>
+                <td>RDFC</td>
                 <td>ML-DSA-87</td>
                 <td>4627</td>
               </tr>
               <tr>
                 <td>`mldsa87-jcs-2024`</td>
+                <td>JCS</td>
                 <td>ML-DSA-87</td>
                 <td>4627</td>
               </tr> -->
               <tr>
                 <td>`slhdsa128-rdfc-2024`</td>
+                <td>RDFC</td>
                 <td>SLH-DSA-SHA2-128s</td>
                 <td>7856</td>
                 <td><a href="#SLHDSA_Cryptosuites">SLH-DSA</a></td>
               </tr>
               <tr>
                 <td>`slhdsa128-jcs-2024`</td>
+                <td>JCS</td>
                 <td>SLH-DSA-SHA2-128s</td>
                 <td>7856</td>
                 <td><a href="#SLHDSA_Cryptosuites">SLH-DSA</a></td>
               </tr>
               <!-- <tr>
                 <td>`slhdsa192-rdfc-2024`</td>
+                <td>RDFC</td>
                 <td>SLH-DSA-SHA2-192s</td>
                 <td>16224</td>
               </tr>
               <tr>
                 <td>`slhdsa192-jcs-2024`</td>
+                <td>JCS</td>
                 <td>SLH-DSA-SHA2-192s</td>
                 <td>16224</td>
               </tr>
               <tr>
                 <td>`slhdsa256-rdfc-2024`</td>
+                <td>RDFC</td>
                 <td>SLH-DSA-SHA2-256s</td>
                 <td>29792</td>
               </tr>
               <tr>
                 <td>`slhdsa256-jcs-2024`</td>
+                <td>JCS</td>
                 <td>SLH-DSA-SHA2-256s</td>
                 <td>29792</td>
               </tr> -->
               <tr>
                 <td>`falcon512-rdfc-2024`</td>
+                <td>RDFC</td>
                 <td>FALCON-512</td>
                 <td>666</td>
                 <td><a href="#Falcon_Cryptosuites">FALCON</a></td>
               </tr>
               <tr>
                 <td>`falcon512-jcs-2024`</td>
+                <td>JCS</td>
                 <td>FALCON-512</td>
                 <td>666</td>
                 <td><a href="#Falcon_Cryptosuites">FALCON</a></td>
               </tr>
               <tr>
                 <td>`sqisign1-rdfc-2024`</td>
+                <td>RDFC</td>
                 <td>SQIsign-I</td>
-                <td>148</td>
+                <td>200</td>
                 <td><a href="#SQISign_Cryptosuites">SQIsign</a></td>
               </tr>
               <tr>
                 <td>`sqisign1-jcs-2024`</td>
+                <td>JCS</td>
                 <td>SQIsign-I</td>
-                <td>148</td>
+                <td>200</td>
                 <td><a href="#SQISign_Cryptosuites">SQIsign</a></td>
               </tr>
             </tbody>
@@ -1140,23 +1178,23 @@ key, and signature sizes are summarized in [[[#SQISummaryTable]]].
             <tr>
               <td>SQIsign-I</td>
               <td>Category 1</td>
-              <td>353</td>
-              <td>65</td>
-              <td>148</td>
+              <td>270</td>
+              <td>83</td>
+              <td>200</td>
             </tr>
             <tr>
               <td>SQIsign-III</td>
               <td>Category 3</td>
-              <td>529</td>
-              <td>97</td>
-              <td>224</td>
+              <td>417</td>
+              <td>129</td>
+              <td>306</td>
             </tr>
             <tr>
               <td>SQIsign-V</td>
               <td>Category 5</td>
-              <td>701</td>
-              <td>129</td>
-              <td>292</td>
+              <td>549</td>
+              <td>169</td>
+              <td>406</td>
             </tr>
           </tbody>
         </table>
@@ -1197,19 +1235,41 @@ family of SQIsign cryptosuites given in [[[#SQISuitesTable]]].
       <section id="SelectiveDisclosure">
         <h3>Selective Disclosure Cryptosuites for Quantum Resistant Signatures</h3>
         <p class="informative">
-The [[VC-DATA-INTEGRITY-1.1]] specification defines [=selective disclosure=] and
-defines common algorithms for implementing [=selective disclosure=] where the
-signature scheme does not natively support it.  Two general <em>approaches</em>
-are defined (1) Signed Individual Claims ([=SIC=]) and (2) Salted Hash of Claims
-([=SHoC=]). The size of the signature impacts the overall base and derived proof
-sizes as indicated in [[[VC-DATA-INTEGRITY-1.1#SDApproachTable]]]. For large
-signature sizes the [=SHoC=] approach would be used.
+The [VC-DATA-INTEGRITY-1.1] specification
+defines common algorithms for
+selective disclosure where the
+signature scheme does not support it natively.
+It defines two general approaches: (1) Signed Individual Claims (SIC) and (2) Salted Hash of Claims (SHoC). The size of the signature directly affects
+both base and derived proof sizes.
+</p>
+<p>
+Post-quantum signatures are larger than their classical
+counterparts, some by orders of magnitude. In addition, no quantum-resistant equivalent of BBS is
+standardized. With SIC, each disclosed non-mandatory statement carries its
+own signature. With SHoC, the derived proof carries a flat list of hashes
+that grows linearly with the number of statements. For documents with more
+than a few optional claims, either approach can produce impractically large
+proofs when combined with large post-quantum signatures.</p>
+<p>
+This specification leans toward [=SHoC-MerkleTree=], a size optimization of
+SHoC. [=SHoC-MerkleTree=] replaces the flat list of salted claim hashes with a
+Merkle tree over those hashes, constructed as defined in [RFC9162]. A derived
+proof then carries the base signature, the salts of disclosed statements, the
+roots of fully undisclosed subtrees, and the disclosed leaf positions. This
+reduces the per-statement overhead from O(N) to O(k log N), where N is the
+number of statements and k is the number disclosed. This optimization is
+independent of the
+signature algorithm.</p>
+<p>
+Selective disclosure does not by itself prevent verifiers from linking
+presentations made from the same base proof. Batch issuance, described in
+[[[#SelectiveUnlinkableDisclosure]]] addresses this. It is orthogonal to the choice between SIC and
+SHoC.
         </p>
 
         <p>
 The selective disclosure cryptosuites defined in this specification are  listed
-in  [[[#SDCryptosuiteTable]]]. Note that all selective disclosure cryptosuites
-utilize the advanced features of [[RDF-CANON]].
+in  [[[#SDCryptosuiteTable]]]. All selective disclosure cryptosuites use the advanced features of [RDF-CANON].
         </p>
         <table id="SDCryptosuiteTable" class="data numbered">
             <caption><em>Selective Disclosure Cryptosuites.</em> </caption>
@@ -1225,34 +1285,47 @@ utilize the advanced features of [[RDF-CANON]].
             <tbody>
               <tr>
                 <td>`mldsa44-sd-2024`</td>
-                <td>[=SHoC=]</td>
+                <td>[=SHoC-MerkleTree=]</td>
                 <td>ML-DSA-44</td>
                 <td>2420</td>
                 <td><a href="#MLDSA_Cryptosuites">ML-DSA</a></td>
               </tr>
               <tr>
                 <td>`slhdsa128-sd-2024`</td>
-                <td>[=SHoC=]</td>
+                <td>[=SHoC-MerkleTree=]</td>
                 <td>SLH-DSA-SHA2-128s</td>
                 <td>7856</td>
                 <td><a href="#SLHDSA_Cryptosuites">SLH-DSA</a></td>
               </tr>
               <tr>
                 <td>`falcon512-sd-2024`</td>
-                <td>[=SIC=] or [=SHoC=]</td>
+                <td>[=SIC-batched-issuance=] or [=SHoC-MerkleTree=]</td>
                 <td>FALCON-512</td>
                 <td>666</td>
                 <td><a href="#Falcon_Cryptosuites">FALCON</a></td>
               </tr>
               <tr>
                 <td>`sqisign1-sd-2024`</td>
-                <td>[=SIC=]</td>
+                <td>[=SIC-batched-issuance=] or [=SHoC-MerkleTree=]</td>
                 <td>SQISign-I</td>
-                <td>148</td>
+                <td>200</td>
                 <td><a href="#SQISign_Cryptosuites">SQIsign</a></td>
               </tr>
             </tbody>
           </table>
+
+          <p>
+          SIC is not defined for mldsa44-sd-2024 or slhdsa128-sd-2024, because a
+    derived proof would carry one 2420- or 7856-byte signature per disclosed
+    non-mandatory statement. Where a cryptosuite supports more than one approach,
+    the proofValue header bytes identify the approach used.
+    Any of these cryptosuites can be used with batch issuance.</p>
+          <p class="ednote">
+            The algorithms below use the flat list of salted hashes for [=SHoC=]. The
+            [=SHoC-MerkleTree=] variant replaces that list with the Merkle tree aggregation
+            proposed in <a href="https://github.com/w3c/vc-data-integrity/pull/377">vc-data-integrity
+            PR #377</a>.
+          </p>
 
         <section id="SD-Base">
           <h4>Create Selective Disclosure Base Proof</h4>
@@ -1263,6 +1336,12 @@ an <a>unsecured data document</a>. Required inputs are an
 <a>unsecured data document</a> ([=map=] |unsecuredDocument|), and a set of proof
 options ([=map=] |options|). A [=data integrity proof=] ([=map=]), or an error,
 is produced as output.
+</p>
+
+<p class="ednote">
+Suggested normative requirement, to start the discussion: an issuer MUST create a
+batch of one or more base proofs for the same document, and a holder MUST NOT use
+a base proof for more than one presentation.
           </p>
 
           <ol class="algorithm">
@@ -2382,24 +2461,125 @@ The following section describes privacy considerations that developers
 implementing this specification should be aware of in order to avoid violating
 privacy assumptions.
       </p>
-      <section>
+      <section id="SelectiveUnlinkableDisclosure">
       <h3>Selective and Unlinkable Disclosure</h3>
 
       <p>
-The cryptographic suites described in this specification do not support
-[=selective disclosure=] or [=unlinkable disclosure=]. If
-[=selective disclosure=] is a desired feature, readers might find the
-[[[?VC-DI-ECDSA]]] specification useful. If [=unlinkable disclosure=] is of
-interest, the [[[?VC-DI-BBS]]] specification provides an unlinkable digital
-signature mechanism.
+The selective disclosure cryptosuites listed in [[[#CryptosuiteTable]]] do not, by
+themselves, provide unlinkable disclosure. Every derived proof created from a
+given base proof carries the same issuer signature. With [[=SHoC-MerkleTree=]], it
+also carries the same subtree roots for any fully undisclosed subtree. As a
+result, colluding verifiers can link presentations made from the same base
+proof.
+</p>
+<p>Pre-quantum schemes such as those in Data Integrity BBS Cryptosuites v1.0
+provide unlinkability natively. They rely on pairing-friendly elliptic curves
+whose security rests on discrete-logarithm assumptions, which a
+cryptographically relevant quantum computer is expected to break. This
+specification does not define a quantum-resistant scheme with native
+unlinkability. Implementations can instead approximate unlinkability through
+batch issuance with single-use presentation. Batch issuance can be combined
+with any cryptosuite in [[[#CryptosuiteTable]]].</p>
+        
+<section id="BatchIssuance" class="informative">
+<h4>Batch Issuance and Single-Use Presentation</h4>
+<p>
+
+With <em>batch issuance</em>, an issuer gives a holder several credentials containing
+the same claims. Each credential is secured with its own base proof, generated
+with fresh per-credential randomness. With <em>single-use
+presentation</em>, the holder
+uses each credential to create at most one derived proof and then discards it.
+Because no two presentations share a base proof, verifiers cannot link them
+through proof values.
+</p>
+<p>
+The following values need to be generated independently for every credential
+in a batch:
+</p>
+<ul>
+  <li>
+SIC: the ephemeral key pair used to sign individual statements, and the key
+or seed used to create the blank node label map.
+</li>
+<li>
+SHoC and SHoC-MerkleTree: the salt seed, and the key or seed used to create
+the blank node label map. If the salt seed were reused, the hashes (SHoC) or
+subtree roots (SHoC-MerkleTree) covering undisclosed statements would be
+identical across credentials. Presentations could then be linked even though
+each base signature differs.
+</li>
+
+</ul>
+
+<table id="BatchApproachTable" class="data numbered">
+  <caption><em>Choosing an approach for batch issuance.</em></caption>
+  <thead>
+    <tr>
+      <th>Approach</th>
+      <th>Issuer signatures per credential</th>
+      <th>Derived proof carries</th>
+      <th>Suited to</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>[=SIC-batched-issuance=]</td>
+      <td>1 base signature plus 1 signature per non-mandatory statement</td>
+      <td>Base signature, ephemeral public key, one signature per
+disclosed non-mandatory statement</td>
+      <td>Few optional statements and small signatures, e.g.,
+SQIsign-I (FALCON-512 also, if the holder expects to present very few claims) </td>
+    </tr>
+    <tr>
+      <td>[=SHoC-MerkleTree=]</td>
+      <td>1</td>
+      <td>Base signature, salts of disclosed statements, roots of
+fully undisclosed subtrees, disclosed leaf positions</td>
+      <td>Many optional statements, small and large signatures, although in this specification only SQIsign-I an FALCON-512 are exemplified
+      </td>
+    </tr>
+  </tbody>
+</table>
+<p>
+
+With [=SIC-batched-issuance=], the issuer computes one signature per non-mandatory statement for
+every credential in the batch Issuance cost therefore grows with the product
+of batch size and statement count, which matters most for algorithms with slow
+signing operations. Where the ephemeral key uses the same signature algorithm
+as the issuer, its public key is also carried in every derived proof.
+</p>
+<p>
+Batch issuance removes correlation through proof values only. Presentations
+can still be linked through:
+</p>
+<ul>
+  <li>
+mandatory statements, which are revealed in every presentation by design
+(e.g., a serial number or `credentialSubject.id`);
+  </li>
+  <li>
+a credential `id`, or a status list index shared by every credential in the
+batch;
+  </li>
+  <li>
+distinctive values such as `validFrom` or proof `created` timestamps. Issuers
+can mitigate this by giving every credential in a batch identical, coarse
+timestamps.
+  </li>
+</ul>
+<p>
+Batch issuance does not prevent the issuer from linking presentations, because
+the issuer generated every credential in the batch. If a holder reuses a
+credential, presentations made with it become linkable to each other. Holder
+software therefore needs to track which credentials have been used and request
+a new batch before the current one is exhausted.
       </p>
       <p class="ednote">
-A relatively efficient selective, but not unlinkable, disclosure
-mechanism can be created by combining the selective disclosure functions
-defined in [[[?VC-DI-ECDSA]]] with the "salted hash" approach of
-<a href="https://www.rfc-editor.org/rfc/rfc9901.html">SD-JWT</a>, if
-there is sufficient interest.
+Recommended batch sizes and the interaction of batch issuance with credential
+status mechanisms are open issues.
       </p>
+    </section>
 
     </section>
 
@@ -2796,6 +2976,156 @@ each of our example cryptosuites is shown below.
         </section>
 
       <!-- End  of SD Test Vector  Section -->
+      </section>
+
+      <section id="TV-SD-Batch">
+        <h3>Selective Disclosure with Batched Issuance</h3>
+        <p>
+          The examples below show the two approaches with batched issuance. The files for
+          each step are arrays with one entry per credential in the batch. Each credential
+          has its own base proof, and a holder presents each credential only once.
+        </p>
+        <p class="warning">
+          The keys and seeds in these examples are published so the outputs can be checked.
+          Real credentials use fresh random values for every credential in a batch.
+        </p>
+
+        <section id="TV-SIC-Employment">
+          <h4>Signed Individual Claims: Employment Authorization</h4>
+          <p>
+            This example applies [=SIC=] to the unsigned document in
+            [[[#test-vector-common-inputs]]] with a batch size of 1. The issuer fixes the
+            mandatory pointers below. Mandatory statements are disclosed in every
+            presentation, so they are linkable.
+          </p>
+          <pre class="example nohighlight" title="Employment Authorization Mandatory Pointers"
+            data-include="testVectors/inputs/employmentAuthLinkable.json" data-include-format="text"></pre>
+          <p>
+            The holder discloses the selective pointers below. Each disclosed statement
+            carries its own signature.
+          </p>
+          <pre class="example nohighlight" title="Employment Authorization Selective Pointers"
+            data-include="testVectors/inputs/employmentAuthUnlinkable.json" data-include-format="text"></pre>
+          <pre class="example nohighlight" title="SIC Employment Metadata"
+            data-include="testVectors/pqc-sd/sic/employmentAuthorization/common-outputs/metadata.json" data-include-format="text"></pre>
+          <p>
+            The proof hashes and signatures for each cryptosuite and label map are shown
+            below. Vectors are given with both the HMAC id and the shuffled label map.
+          </p>
+          <pre class="example nohighlight" title="SIC Employment proofHash per Cryptosuite"
+            data-include="testVectors/pqc-sd/sic/employmentAuthorization/specificHashes.json" data-include-format="text"></pre>
+          <pre class="example nohighlight" title="SIC Employment Signatures per Cryptosuite"
+            data-include="testVectors/pqc-sd/sic/employmentAuthorization/specificSignatures.json" data-include-format="text"></pre>
+          <section>
+            <h5>`sqisign1-sd-2024` with HMAC id label map</h5>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 SIC Base Transform (hmac-id-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/sqisign1-sd-2024/hmac-id-label-map/addBaseTransform.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 SIC Base (hmac-id-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/sqisign1-sd-2024/hmac-id-label-map/addSignedSDBase.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 SIC Disclosure Data (hmac-id-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/sqisign1-sd-2024/hmac-id-label-map/derivedDisclosure.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 SIC Derived (hmac-id-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/sqisign1-sd-2024/hmac-id-label-map/derivedRevealDocument.json" data-include-format="text"></pre>
+          </section>
+          <section>
+            <h5>`sqisign1-sd-2024` with shuffled label map</h5>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 SIC Base Transform (shuffled-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/sqisign1-sd-2024/shuffled-label-map/addBaseTransform.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 SIC Base (shuffled-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/sqisign1-sd-2024/shuffled-label-map/addSignedSDBase.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 SIC Disclosure Data (shuffled-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/sqisign1-sd-2024/shuffled-label-map/derivedDisclosure.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 SIC Derived (shuffled-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/sqisign1-sd-2024/shuffled-label-map/derivedRevealDocument.json" data-include-format="text"></pre>
+          </section>
+          <section>
+            <h5>`falcon512-sd-2024` with HMAC id label map</h5>
+            <pre class="example nohighlight" title="falcon512-sd-2024 SIC Base Transform (hmac-id-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/falcon512-sd-2024/hmac-id-label-map/addBaseTransform.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 SIC Base (hmac-id-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/falcon512-sd-2024/hmac-id-label-map/addSignedSDBase.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 SIC Disclosure Data (hmac-id-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/falcon512-sd-2024/hmac-id-label-map/derivedDisclosure.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 SIC Derived (hmac-id-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/falcon512-sd-2024/hmac-id-label-map/derivedRevealDocument.json" data-include-format="text"></pre>
+          </section>
+          <section>
+            <h5>`falcon512-sd-2024` with shuffled label map</h5>
+            <pre class="example nohighlight" title="falcon512-sd-2024 SIC Base Transform (shuffled-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/falcon512-sd-2024/shuffled-label-map/addBaseTransform.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 SIC Base (shuffled-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/falcon512-sd-2024/shuffled-label-map/addSignedSDBase.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 SIC Disclosure Data (shuffled-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/falcon512-sd-2024/shuffled-label-map/derivedDisclosure.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 SIC Derived (shuffled-label-map)"
+              data-include="testVectors/pqc-sd/sic/employmentAuthorization/falcon512-sd-2024/shuffled-label-map/derivedRevealDocument.json" data-include-format="text"></pre>
+          </section>
+          <pre class="example nohighlight" title="SIC Employment Unsigned Revealed Document"
+            data-include="testVectors/pqc-sd/sic/employmentAuthorization/common-outputs/derivedUnsignedReveal.json" data-include-format="text"></pre>
+        </section>
+
+        <section id="TV-Merkle-EVBattery">
+          <h4>Merkle Tree SHoC: EV Battery Passport</h4>
+          <p>
+            The EV battery passport is modelled on the access groups of Annex XIII of the EU Battery
+            Regulation. Public battery model information is mandatory and is covered by the
+            base signature. The restricted groups are selective. Material shares and
+            dismantling information are for persons with a legitimate interest. A test
+            report and a supplier attestation are for authorities. Individual battery data
+            such as state of health and cycle count is also limited to persons with a
+            legitimate interest.
+          </p>
+          <pre class="example nohighlight" title="EV Battery Passport (unsecured)"
+            data-include="testVectors/inputs/evBatteryPassport.json" data-include-format="text"></pre>
+          <p>
+            This example follows the Merkle tree aggregation of [=SHoC=] proposed in
+            <a href="https://github.com/w3c/vc-data-integrity/pull/377">vc-data-integrity
+            PR #377</a> with a batch size of 2. Each non-mandatory N-Quad is one leaf of the
+            tree, and the issuer signs the Merkle root once. The derived proof shown discloses
+            the second-life buyer view. Only the HMAC id label map is used, since that PR
+            requires label map values of 32 bytes. For this document with `falcon512-sd-2024`,
+            the base proof is 1,159 bytes, compared with 36,781 bytes when each non-mandatory
+            statement is signed with [=SIC=], and the derived proof for the same disclosure is
+            about 1,550 bytes instead of 3,994 bytes.
+          </p>
+          <pre class="example nohighlight" title="EV Battery Passport Metadata"
+            data-include="testVectors/pqc-sd/merkle/evBatteryPassport/common-outputs/metadata.json" data-include-format="text"></pre>
+          <pre class="example nohighlight" title="EV Battery Passport Proof Sizes per Batch Member"
+            data-include="testVectors/pqc-sd/merkle/evBatteryPassport/summary.json" data-include-format="text"></pre>
+          <section>
+            <h5>`sqisign1-sd-2024`</h5>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 Merkle Base Transform"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/sqisign1-sd-2024/hmac-id-label-map/addBaseTransform.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 Merkle Tree"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/sqisign1-sd-2024/hmac-id-label-map/addMerkleTree.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 Merkle Base"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/sqisign1-sd-2024/hmac-id-label-map/addSignedSDBase.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 Merkle Disclosure Data"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/sqisign1-sd-2024/hmac-id-label-map/derivedDisclosure.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="sqisign1-sd-2024 Merkle Derived"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/sqisign1-sd-2024/hmac-id-label-map/derivedRevealDocument.json" data-include-format="text"></pre>
+          </section>
+          <section>
+            <h5>`falcon512-sd-2024`</h5>
+            <pre class="example nohighlight" title="falcon512-sd-2024 Merkle Base Transform"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/falcon512-sd-2024/hmac-id-label-map/addBaseTransform.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 Merkle Tree"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/falcon512-sd-2024/hmac-id-label-map/addMerkleTree.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 Merkle Base"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/falcon512-sd-2024/hmac-id-label-map/addSignedSDBase.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 Merkle Disclosure Data"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/falcon512-sd-2024/hmac-id-label-map/derivedDisclosure.json" data-include-format="text"></pre>
+            <pre class="example nohighlight" title="falcon512-sd-2024 Merkle Derived"
+              data-include="testVectors/pqc-sd/merkle/evBatteryPassport/falcon512-sd-2024/hmac-id-label-map/derivedRevealDocument.json" data-include-format="text"></pre>
+          </section>
+          <pre class="example nohighlight" title="EV Battery Passport Unsigned Revealed Document"
+            data-include="testVectors/pqc-sd/merkle/evBatteryPassport/common-outputs/derivedUnsignedReveal.json" data-include-format="text"></pre>
+          <p class="ednote">
+            These vectors follow the current text of vc-data-integrity PR #377, including its
+            tentative proof headers `0xd9 0x5d 0x12` (base) and `0xd9 0x5d 0x13` (derived).
+            They will be regenerated if that PR changes.
+          </p>
+        </section>
       </section>
     </section>
 

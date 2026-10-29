@@ -1,0 +1,33 @@
+[
+  {
+    "type": [
+      "VerifiableCredential",
+      "EmploymentAuthorizationDocumentCredential"
+    ],
+    "@context": [
+      "https://www.w3.org/ns/credentials/v2",
+      "https://w3id.org/citizenship/v4rc1"
+    ],
+    "issuer": {
+      "id": "did:key:zDnaegE6RR3atJtHKwTRTWHsJ3kNHqFwv7n9YjTgmU7TyfU76",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NgUPr/HwADaAIhG61j/AAAAABJRU5ErkJggg=="
+    },
+    "validFrom": "2019-12-03T00:00:00Z",
+    "validUntil": "2029-12-03T00:00:00Z",
+    "credentialSubject": {
+      "type": [
+        "Person",
+        "EmployablePerson"
+      ],
+      "birthCountry": "Bahamas"
+    },
+    "proof": {
+      "type": "DataIntegrityProof",
+      "cryptosuite": "sqisign1-sd-2024",
+      "created": "2026-08-15T20:00:00Z",
+      "verificationMethod": "did:key:uriTuLwWFBP30QGUZhhXsBSBWspERfapNvQ1QsHetEqe_7sOe4Lb4welJA6vg8enZKkuzd1jZS3V9abZyruw4PrRxWLi76yLVHuxtEdidQN0HgNEkBw",
+      "proofPurpose": "assertionMethod",
+      "proofValue": "u2V0BhVjIHoevdKlvsNSpccv8WV8chfkou8lCnop-G1laPYYdA_0NVGRiIrNi6A85xjS1Gn4WQLnD4pUUaENd09UWZuURUd8WEJt1d4ATSafNCFZWZ7sqLmcW0SI27Zl0UQveUnFasG4kaFUbIIrpOh0n_Q7h7H-PrhCWxz8buZVf7QdyTaEUI_sNi_UQqn08AUPNjTWL7KAiNc_7ppJB8Q-dFELjSsTGXdbT1oIqA5o1Bx-tFeOMkQ_odSA3gJRdbtjmAMvgnuE_9ICSBAtYVa4kCoCQTzQRCDXXonSw_iS07ScZAHqD1kxOe7bFre0P1TQdcmxX0oiFlyJ5ftZxaM1Q6-tHUJhFd_Gawa_mwjNfsyMpWj8XeeXOsAVhZakxwJM3KAKGWMilSXDRmFeO0zIuqY9GOlZzJWBTV94b5BN9l8dtu2mVfH2UBYWkukQbFQHg-ot4n0P2_gBmjGl-7I3fodGQ0szri4Ko4XhvxrRvlQIcFWfbgHYun8xwDlmwq5NxHooJJVkSYaLtueaxQwiKBfliZrCPACDKFm82-v9O0YilE_SCguVghjKVAHH6tOBYuIg76qi9a8Wp2_Z0HOSFx1gH2DR7sLcrgh0CwT3sMI2T5ee79l1XCZwPB5q8YruFsKPayZV8Dc0aMCEHCljI9LGmR3IfTJI5iB9mU0v5fRKQVdZyMumFhVCAIN5jYVa1kv3r5HWCSAnMiSgVhaGEoDfyPkV5KyIfIxgyodgxE_Lt_QLkGujWcMYkDaSMSehcLchas23qFWbC1vU3sZuJsWPcK444X5tJCB-x8sSpP954FbywgGFPF4oAISq3qLXTraQHyx9HnE8FDYHbwNVhGr_GrBhGm4TJieKmARfiLvV_Ieu_IPD9cLlwC9Or5RQpuHILwgs9eCbxrDMls-Y7xHyoy2QSAgdYyIhSYUxsQ6GEhHeXIR-htSO-yyxMhoAtEuKz9q9d4hCisnwaw8XtZQsNN8d-8rr4RmmEMkx7pgEFrtwBNNZVek0nYMvO94jW1hmJZ6jU62cePx7ZvOto0RyISeQJqeDlzqz-_eeMi3ZMlmsA022pHrZK8dDN-teCe5zZNTpeEp455-V5Fp739z2_8rpQdxX56EZ3OnT_4lJ0xP0_7SJHorboUbTZdqHyLjB8QNaL0uK4y_eoe5MgZAvrL5BvNLWRQWJR2HZURwICWMhn6ptfxXOgfaIgEXjFU6BCHApaJsZx6WFzp12UqMlSUrmIijCcjAEBAD7PvtxSr2EfXD8P9ug6CHYsH4mHUd34oUlWqh3zMYodpE_gGMiqTnwmQQBGqxABj6pQkmxdSzXkfNGX-YQdQUSoGTrVtl8EmwAStOwYj5BNGLXaBgxDS___Li40T2N78gxYIQTc6jmjo5eFelPBAENyOOYbTQ1rvk5Go0ybMei1AGXAJd6M5s7MXGfdLhbvFH6FTmRsQBqVvGahEPICBVjIlGds5hziptZCkD1GsI-XJ4AP5tCvvhlGEqx-bHkVyhvXrivuil0WqAf43WQbbVg8orCMZxYElGqhllkV9FhpZGfvEUjOWzoVb6jCIMrVBSyxL41xN8yKFHTWOd8reKPNi3dPMJPyPCnVSAQG9YNITAYzHizbN5_pF1omxKDfshGTf8sUW60nQ6MXPziRxH9OtGS9ccVA1xiXUAUMK0Gn-bbyUFAZ3uSIYAcwUu4-axWJpkO0_RmGfsljofFx-aJa2tE9jlIQCgdYyIjl9zbpRmB8CvZt1KeqTGGom0Sro4CGMTLNsOUkGUrPJHjzwmCapyACfv-_irioQmBE5rJgVnIjotNocGU4aUWvLWJRo13k8AvShsretZFKzC5tlf6xFaFnonFip29eA1HWzpBgz3zKeQseNT85FGImr29z53IxDmeHL_9HAuVZEXtmNrdBkmouCd2b2ugKzVeA0tcqcJb68UMrHj-UssNEFKvH8g8FdFx6oAFxO4kpor2GUHMI-JnkgS-QsBR80osWgYTKuwIFogAAAQGEAAQFBw"
+    }
+  }
+]

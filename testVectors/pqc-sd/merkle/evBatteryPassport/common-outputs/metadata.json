@@ -1,0 +1,10 @@
+{
+  "batch-size": 2,
+  "presentation": "present-and-burn",
+  "selective-group": "battery:secondLife",
+  "label-map": "hmac-id-label-map",
+  "salt-seed-bytes": 32,
+  "salt-bytes": 16,
+  "base-header": "d95d12",
+  "derived-header": "d95d13"
+}

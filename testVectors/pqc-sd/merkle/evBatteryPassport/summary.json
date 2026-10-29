@@ -1,0 +1,50 @@
+[
+  {
+    "key": "sqisign1-sd-2024/hmac-id-label-map",
+    "member": 0,
+    "group": "battery:secondLife",
+    "mandatoryCount": 58,
+    "treeSize": 52,
+    "revealed": 3,
+    "subtreeProofHashes": 12,
+    "baseBytes": 692,
+    "derivedBytes": 1086,
+    "signatureBytes": 200
+  },
+  {
+    "key": "sqisign1-sd-2024/hmac-id-label-map",
+    "member": 1,
+    "group": "battery:secondLife",
+    "mandatoryCount": 58,
+    "treeSize": 52,
+    "revealed": 3,
+    "subtreeProofHashes": 9,
+    "baseBytes": 692,
+    "derivedBytes": 982,
+    "signatureBytes": 200
+  },
+  {
+    "key": "falcon512-sd-2024/hmac-id-label-map",
+    "member": 0,
+    "group": "battery:secondLife",
+    "mandatoryCount": 58,
+    "treeSize": 52,
+    "revealed": 3,
+    "subtreeProofHashes": 11,
+    "baseBytes": 1159,
+    "derivedBytes": 1519,
+    "signatureBytes": 666
+  },
+  {
+    "key": "falcon512-sd-2024/hmac-id-label-map",
+    "member": 1,
+    "group": "battery:secondLife",
+    "mandatoryCount": 58,
+    "treeSize": 52,
+    "revealed": 3,
+    "subtreeProofHashes": 12,
+    "baseBytes": 1159,
+    "derivedBytes": 1553,
+    "signatureBytes": 666
+  }
+]

@@ -1,0 +1,31 @@
+[
+  {
+    "labelMap": {
+      "dataType": "Map",
+      "value": [
+        [
+          "c14n0",
+          "b0"
+        ],
+        [
+          "c14n1",
+          "b1"
+        ]
+      ]
+    },
+    "mandatoryIndexes": [
+      0,
+      4,
+      5,
+      7
+    ],
+    "selectiveIndexes": [
+      0,
+      1,
+      8,
+      13,
+      14,
+      15
+    ]
+  }
+]

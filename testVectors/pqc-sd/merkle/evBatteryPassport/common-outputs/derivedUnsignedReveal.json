@@ -1,0 +1,221 @@
+{
+  "id": "https://passport.example.org/passports/RK-EV-2027-00018429",
+  "type": "bp:BatteryPassport",
+  "@context": [
+    {
+      "bp": "https://example.org/vocab/battery-passport#",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "id": "@id",
+      "type": "@type",
+      "issuer": "bp:issuer",
+      "issuedAt": {
+        "@id": "bp:issuedAt",
+        "@type": "xsd:dateTime"
+      },
+      "battery": "bp:battery",
+      "batteryId": "bp:batteryId",
+      "model": "bp:model",
+      "manufacturer": "bp:manufacturer",
+      "manufacturedAt": {
+        "@id": "bp:manufacturedAt",
+        "@type": "xsd:date"
+      },
+      "manufacturedIn": "bp:manufacturedIn",
+      "batteryCategory": "bp:batteryCategory",
+      "chemistry": "bp:chemistry",
+      "nominalEnergyKWh": {
+        "@id": "bp:nominalEnergyKWh",
+        "@type": "xsd:decimal"
+      },
+      "nominalVoltage": {
+        "@id": "bp:nominalVoltage",
+        "@type": "xsd:decimal"
+      },
+      "massKg": {
+        "@id": "bp:massKg",
+        "@type": "xsd:decimal"
+      },
+      "carbonFootprint": "bp:carbonFootprint",
+      "carbonFootprintKgCO2ePerKWh": {
+        "@id": "bp:carbonFootprintKgCO2ePerKWh",
+        "@type": "xsd:decimal"
+      },
+      "calculationMethod": "bp:calculationMethod",
+      "verification": "bp:verification",
+      "verifiedBy": "bp:verifiedBy",
+      "materials": "bp:materials",
+      "cobaltShare": {
+        "@id": "bp:cobaltShare",
+        "@type": "xsd:decimal"
+      },
+      "nickelShare": {
+        "@id": "bp:nickelShare",
+        "@type": "xsd:decimal"
+      },
+      "lithiumShare": {
+        "@id": "bp:lithiumShare",
+        "@type": "xsd:decimal"
+      },
+      "recycledContent": "bp:recycledContent",
+      "recycledCobaltPercent": {
+        "@id": "bp:recycledCobaltPercent",
+        "@type": "xsd:decimal"
+      },
+      "recycledNickelPercent": {
+        "@id": "bp:recycledNickelPercent",
+        "@type": "xsd:decimal"
+      },
+      "performance": "bp:performance",
+      "stateOfHealthPercent": {
+        "@id": "bp:stateOfHealthPercent",
+        "@type": "xsd:decimal"
+      },
+      "availableEnergyKWh": {
+        "@id": "bp:availableEnergyKWh",
+        "@type": "xsd:decimal"
+      },
+      "cycleCount": {
+        "@id": "bp:cycleCount",
+        "@type": "xsd:integer"
+      },
+      "measurementDate": {
+        "@id": "bp:measurementDate",
+        "@type": "xsd:date"
+      },
+      "measurementMethod": "bp:measurementMethod",
+      "supplyChain": "bp:supplyChain",
+      "criticalRawMaterialOrigin": "bp:criticalRawMaterialOrigin",
+      "dueDiligenceStatement": "bp:dueDiligenceStatement",
+      "repairAndRecycling": "bp:repairAndRecycling",
+      "repairabilityScore": {
+        "@id": "bp:repairabilityScore",
+        "@type": "xsd:decimal"
+      },
+      "disassemblyInstructions": "bp:disassemblyInstructions",
+      "recyclingInstructions": "bp:recyclingInstructions",
+      "evidence": "bp:evidence",
+      "evidenceType": "bp:evidenceType",
+      "evidenceUri": {
+        "@id": "bp:evidenceUri",
+        "@type": "@id"
+      },
+      "evidenceHash": "bp:evidenceHash",
+      "accessTier": "bp:accessTier",
+      "linkability": "bp:linkability",
+      "claimStatus": "bp:claimStatus",
+      "validFrom": {
+        "@id": "bp:validFrom",
+        "@type": "xsd:date"
+      },
+      "lastUpdated": {
+        "@id": "bp:lastUpdated",
+        "@type": "xsd:dateTime"
+      },
+      "selfIgnitesOnPuncture": {
+        "@id": "bp:selfIgnitesOnPuncture",
+        "@type": "xsd:boolean"
+      },
+      "name": "bp:name",
+      "legalIdentifier": "bp:legalIdentifier",
+      "dynamicData": "bp:dynamicData",
+      "sensitiveSupplierAttestation": "bp:sensitiveSupplierAttestation",
+      "statement": "bp:statement",
+      "lithium": "bp:lithium",
+      "nickel": "bp:nickel",
+      "cobalt": "bp:cobalt",
+      "status": "bp:status",
+      "scheme": "bp:scheme",
+      "statementUri": {
+        "@id": "bp:statementUri",
+        "@type": "@id"
+      },
+      "complianceTestReport": "bp:complianceTestReport",
+      "testStandard": "bp:testStandard",
+      "testResult": "bp:testResult",
+      "testedBy": {
+        "@id": "bp:testedBy",
+        "@type": "@id"
+      },
+      "reportDate": {
+        "@id": "bp:reportDate",
+        "@type": "xsd:date"
+      }
+    },
+    "https://w3id.org/security/data-integrity/v2"
+  ],
+  "issuer": {
+    "id": "did:key:uriTuLwWFBP30QGUZhhXsBSBWspERfapNvQ1QsHetEqe_7sOe4Lb4welJA6vg8enZKkuzd1jZS3V9abZyruw4PrRxWLi76yLVHuxtEdidQN0HgNEkBw",
+    "type": "bp:BatteryManufacturer",
+    "name": "Northstar Energy Systems GmbH",
+    "legalIdentifier": "DE-EXAMPLE-123456"
+  },
+  "issuedAt": "2027-02-18T09:00:00Z",
+  "battery": {
+    "id": "https://passport.example.org/batteries/RK-EV-2027-00018429",
+    "type": "bp:ElectricVehicleBattery",
+    "selfIgnitesOnPuncture": true,
+    "batteryId": "RK-EV-2027-00018429",
+    "model": "NS-82-NMC-01",
+    "manufacturer": "Northstar Energy Systems GmbH",
+    "manufacturedAt": "2027-01-22",
+    "manufacturedIn": "DE",
+    "batteryCategory": "electric-vehicle-battery",
+    "chemistry": "lithium-ion-NMC",
+    "nominalEnergyKWh": 82,
+    "nominalVoltage": 400,
+    "massKg": 512.5,
+    "carbonFootprint": {
+      "accessTier": "public",
+      "linkability": "linkable",
+      "claimStatus": "verified",
+      "carbonFootprintKgCO2ePerKWh": 61.8,
+      "calculationMethod": "Product-carbon-footprint-calculation-method-v1.2",
+      "verification": "third-party-verified",
+      "verifiedBy": "https://verifier.example.org/certificates/NS-82-2027-0441",
+      "validFrom": "2027-01-30"
+    },
+    "recycledContent": {
+      "accessTier": "public",
+      "linkability": "linkable",
+      "claimStatus": "verified",
+      "recycledCobaltPercent": 18,
+      "recycledNickelPercent": 12,
+      "evidence": {
+        "evidenceType": "chain-of-custody-certificate",
+        "evidenceUri": "https://evidence.example.org/certificates/COC-2027-8831",
+        "evidenceHash": "sha256:4a0ca96e9b0b6d8e2b8a1f7e4f0c9c6a7cf8d2d1b6a0b88e1423456789abcdef"
+      }
+    },
+    "supplyChain": {
+      "accessTier": "public",
+      "linkability": "linkable",
+      "claimStatus": "partially-verified",
+      "criticalRawMaterialOrigin": {
+        "lithium": "Australia",
+        "nickel": "Indonesia",
+        "cobalt": "Finland"
+      },
+      "dueDiligenceStatement": {
+        "status": "completed",
+        "scheme": "OECD-aligned-due-diligence-process",
+        "statementUri": "https://manufacturer.example.com/statements/NS-2027-00981"
+      }
+    },
+    "performance": {
+      "stateOfHealthPercent": 96.4,
+      "cycleCount": 142
+    }
+  },
+  "evidence": [
+    {
+      "evidenceType": "production-record",
+      "evidenceUri": "https://manufacturer.example.org/records/production/NS-82-2027-00018429",
+      "evidenceHash": "sha256:7cf8d2d1b6a0b88e91492c4a40e916b4546a3e5b319030cb77167cbc3028be9f"
+    },
+    {
+      "evidenceType": "carbon-footprint-verification",
+      "evidenceUri": "https://verifier.example.org/certificates/NS-82-2027-0441",
+      "evidenceHash": "sha256:4a0ca96e9b0b6d8e3b2e75e615ae7e2c586c1bad43ad9b889a14419567f6cb3a"
+    }
+  ]
+}

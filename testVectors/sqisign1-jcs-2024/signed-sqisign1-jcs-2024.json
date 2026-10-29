@@ -39,8 +39,8 @@
     "type": "DataIntegrityProof",
     "cryptosuite": "sqisign1-jcs-2024",
     "created": "2023-02-24T23:36:38Z",
-    "verificationMethod": "did:key:uriThRL3yRH1lFwBzv4bD4tJB_pxqquMGXB1_Sj0PPOEDA92Z4Lgd7E-FvKH-Xs-hLtL4wvW8WL11G3sUMdhkDKgDCw",
+    "verificationMethod": "did:key:uriTuLwWFBP30QGUZhhXsBSBWspERfapNvQ1QsHetEqe_7sOe4Lb4welJA6vg8enZKkuzd1jZS3V9abZyruw4PrRxWLi76yLVHuxtEdidQN0HgNEkBw",
     "proofPurpose": "assertionMethod",
-    "proofValue": "uI2_222exFq1NXg8hWMFsENbhQp17XWsPzc8xU0VJIwJY6bIcqOdHmEpmqHRysXP9dPS0ML6ZeeVlT5tNsRyFBAAAGBvscX1D4zKjDbhhFNEuFW0RyKBxRaUoCxzpZzh_Iq-LmCsVLQ8WDQhygTQQTbwWo20zi112MzNTOMU3H6zUZId2q-mRjpZtuzaxjY_QcwELBg"
+    "proofValue": "uto0T383V7SMzNgC8UBSspJdB_bmBymmeK6tRL7-haalTU15f8UaD2SUAbpgrtjus5WlWr_bGyA_Mq04qjp83OsSsvN-TtWFQl_hLooUOl7GmHxXtdPrzJJqTSA5LUVOI_-KJcj3BFXw5YwQsyZzNd8dms6CeZWJSrGD2DeSn1ASfzAAj_BaRX8I8-WkrynkWQoc-Sfvbg0REZueePnt0HB_KzXaKUAnMJSKY5ShHqwLnJOckmDBMDgeuJSMyKApCDES3X7tCBQc"
   }
 }

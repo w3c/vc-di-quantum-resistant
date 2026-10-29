@@ -1,0 +1,26 @@
+{
+  "sqisign1-sd-2024/shuffled-label-map": [
+    {
+      "proofHash": "a8c2551edfa6ec38a6382fdb5f8588cc924c8a1bb37bdb78da605e7ef1ab354d",
+      "mandatoryHash": "44f501efc0a13a40111a006a194129b231d17df33646ec4f54138cb9c3e0f29e"
+    }
+  ],
+  "sqisign1-sd-2024/hmac-id-label-map": [
+    {
+      "proofHash": "a8c2551edfa6ec38a6382fdb5f8588cc924c8a1bb37bdb78da605e7ef1ab354d",
+      "mandatoryHash": "a042dc047c236816f49fbe5282a79c5e77abe111e47f4c20203b5064c7f0f059"
+    }
+  ],
+  "falcon512-sd-2024/shuffled-label-map": [
+    {
+      "proofHash": "6619ddc3de75f7c879ac5352449e3a07188e7a8f7b4c7eb92c4efc6b909bb130",
+      "mandatoryHash": "44f501efc0a13a40111a006a194129b231d17df33646ec4f54138cb9c3e0f29e"
+    }
+  ],
+  "falcon512-sd-2024/hmac-id-label-map": [
+    {
+      "proofHash": "6619ddc3de75f7c879ac5352449e3a07188e7a8f7b4c7eb92c4efc6b909bb130",
+      "mandatoryHash": "a042dc047c236816f49fbe5282a79c5e77abe111e47f4c20203b5064c7f0f059"
+    }
+  ]
+}
