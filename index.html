@@ -1914,35 +1914,52 @@ examples and can be quite lengthy for some quantum safe signature algorithms.
       <section id="PQC-SD-TV">
         <h3>Quantum Safe Selective Disclosure</h3>
         <p>
-The Quantum-Safe-SD utilize the same set of common inputs described in
-[[[#test-vector-common-inputs]]], this includes the <em>unsigned document</em>,
-<em>proof options</em> and the example keys for ML-DSA-44, SLH-DSA-SHA2-128s,
-and FALCON-512.
+The Quantum-Safe-SD cryptosuites of [[[#SDCryptosuiteTable]]] use the
+[=SHoC=] approach of [[VC-DATA-INTEGRITY-1.1]], with the salted hashes of the
+non-mandatory <em>claims</em> aggregated in a Merkle tree. The test vectors in
+this section follow the algorithms of
+[[[VC-DATA-INTEGRITY-1.1#create-base-proof]]] and
+[[[VC-DATA-INTEGRITY-1.1#add-derived-proof]]]. They use the same set of common
+inputs described in [[[#test-vector-common-inputs]]], this includes the
+<em>unsigned document</em>, <em>proof options</em> and the example keys for
+ML-DSA-44, SLH-DSA-SHA2-128s, and FALCON-512.
         </p>
 
         <section>
           <h4>Selective Disclosure Common Inputs</h4>
           <p>
-For the base proof transformation of Section
-[[[#base-proof-transformation-selective-disclosure]]], the example mandatory
-information specified by the issuer is given via an array
-of JSON pointers as shown below.
+For the base proof transformation of
+[[[VC-DATA-INTEGRITY-1.1#TransformSD]]], the example mandatory information
+specified by the issuer is given via an array of JSON pointers as shown below.
           </p>
           <pre class="example nohighlight" title="Mandatory Pointers" data-include="testVectors/inputs/employMandatory.json"
           data-include-format="text"></pre>
           <p>
-As part of the base proof transformation of Section
-[[[#base-proof-transformation-selective-disclosure]]] an HMAC key is required.
-We use the following HMAC key for all selective disclosure test vectors.
-
+An HMAC key is used to shuffle the blank node identifiers of the transformed
+document. We use the following HMAC key for all selective
+disclosure test vectors.
           </p>
           <pre class="example nohighlight" title="HMAC Key" data-include="testVectors/inputs/HMACKey.json"
           data-include-format="text"></pre>
-
           <p>
-To create the derived proof in [[[#SD-Derived]]], the holder indicate what, if
-anything else, they wish to reveal to the verifier by specifying JSON pointers
-for selective disclosure. The example selective pointers is shown below:
+The salts for the salted hashes are derived from a salt seed using
+[[[VC-DATA-INTEGRITY-1.1#DeriveSaltsSD]]]. We use the following salt seed for
+all selective disclosure test vectors.
+          </p>
+          <pre class="example nohighlight" title="Salt Seed" data-include="testVectors/inputs/SaltSeed.json"
+          data-include-format="text"></pre>
+          <p class="warning">
+The salt seed above was chosen so that these test vectors can be reproduced.
+[[[VC-DATA-INTEGRITY-1.1#MerkleizeSD]]] requires a fresh salt seed, generated
+with a cryptographically secure random number generator, for every base proof.
+Reusing a salt seed, or using a predictable one, can compromise the security of
+the credential, e.g., leaking data on undisclosed <em>claims</em>.
+          </p>
+          <p>
+To create the derived proof in [[[VC-DATA-INTEGRITY-1.1#add-derived-proof]]],
+the holder indicates what, if anything else, they wish to reveal to the
+verifier by specifying JSON pointers for selective disclosure. The example
+selective pointers are shown below:
           </p>
           <pre class="example nohighlight" title="Selective Disclosure Pointers" data-include="testVectors/inputs/employSelective.json"
           data-include-format="text"></pre>
@@ -1951,103 +1968,134 @@ for selective disclosure. The example selective pointers is shown below:
         <section>
           <h4>SD Base Common Outputs</h4>
           <p>
-The result of transform step,
-[[[#base-proof-transformation-selective-disclosure]]], from [[[#SD-Base]]]
-depend on the document, HMAC key, and mandatory pointers but not the specific
-signature algorithm. They result contains appropriately modified maps of
-mandatory and non-mandatory <em>claims</em> in N-Quad format as shown below.
+The results of [[[VC-DATA-INTEGRITY-1.1#TransformSD]]] depend on the document,
+HMAC key, and mandatory pointers but not the specific signature algorithm. The
+result contains appropriately modified maps of mandatory and non-mandatory
+<em>claims</em> in N-Quad format as shown below.
           </p>
-          <pre class="example nohighlight" title="SD Base  Transform" data-include="testVectors/pqc-sd/common-outputs/addBaseTransform.json"
+          <pre class="example nohighlight" title="SD Base Transform" data-include="testVectors/pqc-sd/common-outputs/addBaseTransform.json"
           data-include-format="text"></pre>
 
           <p>
-The hashing step,
-[[[#base-proof-hashing-selective-disclosure]]], from [[[#SD-Base]]] consists of
-a signature/cryptosuite specific part <em>proofHash</em> and a cryptosuite
-independent part that includes the <em>mandatoryHash</em>, <em>salts</em>, and
-<em>saltedHashes</em> as shown below.
+[[[VC-DATA-INTEGRITY-1.1#HashSD]]] computes a cryptosuite specific
+<em>proofHash</em>, shown in [[[#sd-base-signature-specific-outputs]]], and a
+cryptosuite independent <em>mandatoryHash</em> over the mandatory
+<em>claims</em>, shown below.
           </p>
-          <pre class="example nohighlight" title="SD Base Hashing Common" data-include="testVectors/pqc-sd/common-outputs/addSaltedHashes.json"
+          <pre class="example nohighlight" title="SD Base Mandatory Hash" data-include="testVectors/pqc-sd/common-outputs/addMandatoryHash.json"
           data-include-format="text"></pre>
-          <p class="warning">
-We use the same set of <em>salts</em> across all our examples resulting in the
-same set of <em>saltedHashes</em>. In practice <em>salt</em> values can not be
-reused, i.e., reuse of <em>salts</em> can compromise the security of the
-credential, e.g., leaking data on undisclosed <em>claims</em>.
+
+          <p>
+[[[VC-DATA-INTEGRITY-1.1#MerkleizeSD]]] sets the <em>treeSize</em> to the
+number of non-mandatory <em>claims</em> and derives one salt for each of them
+from the salt seed using [[[VC-DATA-INTEGRITY-1.1#DeriveSaltsSD]]]. The salts
+are shown below.
           </p>
+          <pre class="example nohighlight" title="SD Base Salts" data-include="testVectors/pqc-sd/common-outputs/addSalts.json"
+          data-include-format="text"></pre>
+
+          <p>
+Each non-mandatory <em>claim</em> is then hashed together with its salt to
+give a leaf hash, and the leaf hashes are aggregated into a Merkle tree using
+[[[VC-DATA-INTEGRITY-1.1#MTH]]]. The leaf hashes and the resulting
+<em>merkleRoot</em> are shown below. Neither the salts nor the leaf hashes are
+included in the base proof; the holder recomputes them from the salt seed.
+          </p>
+          <pre class="example nohighlight" title="SD Base Merkle Tree" data-include="testVectors/pqc-sd/common-outputs/addMerkleData.json"
+          data-include-format="text"></pre>
         </section>
+
         <section>
           <h4>SD Base Signature Specific Outputs</h4>
           <p>
-The cryptosuite specific part of the hashing step,
-[[[#base-proof-hashing-selective-disclosure]]], from [[[#SD-Base]]] consists of
-a  <em>proofHash</em>. These are summarized  below.
+The cryptosuite specific outputs of the base proof start with the
+<em>proofHash</em> from [[[VC-DATA-INTEGRITY-1.1#HashSD]]]. In
+[[[VC-DATA-INTEGRITY-1.1#SerializeBase-SHoC]]], the data that is signed,
+<em>toSign</em>, is the concatenation of the <em>proofHash</em>, the
+<em>mandatoryHash</em>, the <em>treeSize</em> encoded as an 8-byte big-endian
+unsigned integer, and the <em>merkleRoot</em>. These values are summarized
+below.
           </p>
           <pre class="example nohighlight" title="SD Base Hashing proofConfigs" data-include="testVectors/pqc-sd/specificHashes.json"
           data-include-format="text"></pre>
 
           <p>
-The results of [[[#base-proof-serialization-selective-disclosure]]] is
-integrated into the final output of [[[#SD-Base]]] for each of the example
-cryptosuites are shown below. The signature values in hex are shown in
-[[[#example-pqc-signatures]]].
+The result of [[[VC-DATA-INTEGRITY-1.1#SerializeBase-SHoC]]] is integrated
+into the final output of [[[VC-DATA-INTEGRITY-1.1#create-base-proof]]] for each
+of the example cryptosuites as shown below. The signature values in hex are
+shown in [[[#example-pqc-signatures]]].
           </p>
-          <pre class="example nohighlight" title="mldsa44-sd-2024 Base " data-include="testVectors/pqc-sd/mldsa44-sd-2024/addSignedSDBase.json"
+          <pre class="example nohighlight" title="mldsa44-sd-2024 Base" data-include="testVectors/pqc-sd/mldsa44-sd-2024/addSignedSDBase.json"
           data-include-format="text"></pre>
-          <pre class="example nohighlight" title="slhdsa128-sd-2024 Base " data-include="testVectors/pqc-sd/slhdsa128-sd-2024/addSignedSDBase.json"
+          <pre class="example nohighlight" title="slhdsa128-sd-2024 Base" data-include="testVectors/pqc-sd/slhdsa128-sd-2024/addSignedSDBase.json"
           data-include-format="text"></pre>
-          <pre class="example nohighlight" title="falcon512-sd-2024 Base " data-include="testVectors/pqc-sd/falcon512-sd-2024/addSignedSDBase.json"
+          <pre class="example nohighlight" title="falcon512-sd-2024 Base" data-include="testVectors/pqc-sd/falcon512-sd-2024/addSignedSDBase.json"
           data-include-format="text"></pre>
-          <p  class="note">
-Signature values are generally based on non-deterministic algorithms so you can
-<em>verify</em> a signature value against its corresponding input
-<em>message</em> but you cannot compare two signature values to validate these
-test vectors, i.e., your generated signature value can be valid, while differing
-from what is presented here.
+          <p class="note">
+The signature values shown here were generated deterministically, so that the
+test vectors can be reproduced. Implementations generally use randomized
+signing and will produce different signature values. You can <em>verify</em> a signature value against its
+corresponding input <em>message</em>, but you cannot compare two signature
+values to validate these test vectors, i.e., your generated signature value can
+be valid, while differing from what is presented here.
           </p>
-
         </section>
 
         <section>
           <h4>SD Derive Common Outputs</h4>
 
           <p>
-The first step in formulating a derived proof [[[#SD-Derived]]] is to
-[[[#Derived-Create-Disclosure-Data]]] based on the <em>document</em>,
-<em>base proof</em>, and  <em>selective pointers</em>. This process creates an
-object containing the following items:
-<em>signature</em>, <em>salts</em>, <em>saltedHashes</em>, <em>labelMap</em>,
-<em>mandatoryIndexes</em>, <em>selectiveIndexes</em> and
-<em>revealDocument</em>. Except for the <em>signature</em> field these values
-are common across the cryptosuite test vectors and are shown in the two examples
+The holder starts with [[[VC-DATA-INTEGRITY-1.1#CreateDisclosureData]]], based
+on the <em>document</em>, <em>base proof</em>, and <em>selective
+pointers</em>. In [[[VC-DATA-INTEGRITY-1.1#SerializeDerived-SHoC]]], the
+holder sets the <em>leafIndexes</em> to the positions of the disclosed
+non-mandatory <em>claims</em>, recomputes all the salts and leaf hashes from
+the salt seed, and creates a <em>subtreeProof</em> using
+[[[VC-DATA-INTEGRITY-1.1#CreateSubtreeProof]]]. Only the salts of the
+disclosed <em>claims</em>, the <em>filteredSalts</em>, are included in the
+derived proof. Except for the <em>signature</em>, the values that go into the
+derived proof are common across the cryptosuite test vectors and are shown
 below.
           </p>
-          <pre class="example nohighlight" title="Create Disclosure Data - Common " data-include="testVectors/pqc-sd/common-outputs/derivedDisclosure.json"
+          <pre class="example nohighlight" title="Derived Proof Data - Common" data-include="testVectors/pqc-sd/common-outputs/derivedDisclosure.json"
           data-include-format="text"></pre>
 
-          <pre class="example nohighlight" title="Unsigned Revealed Document " data-include="testVectors/pqc-sd/common-outputs/derivedUnsignedReveal.json"
+          <p>
+The same <em>subtreeProof</em> is shown below with the name of the tree node
+each value belongs to, as computed by
+[[[VC-DATA-INTEGRITY-1.1#ComputeTreeShape]]]. A node named `N_a_b` is the root
+of the subtree covering leaves `a` through `b` − 1, and `Leafj` is the leaf hash
+of leaf `j`. With 20 leaves and leaves 0, 1, 8, 13, 14, and 15 disclosed, the
+proof contains, in left-to-right order, the root of each largest subtree with
+no disclosed leaves.
+          </p>
+          <pre class="example nohighlight" title="Subtree Proof with Node Names" data-include="testVectors/pqc-sd/common-outputs/derivedSubtreeProof.json"
+          data-include-format="text"></pre>
+
+          <pre class="example nohighlight" title="Unsigned Revealed Document" data-include="testVectors/pqc-sd/common-outputs/derivedUnsignedReveal.json"
           data-include-format="text"></pre>
         </section>
         <section>
           <h4>SD Derive Signature Specific Outputs</h4>
 
           <p>
-The <em>signature</em> portion of the [[[#Derived-Create-Disclosure-Data]]]
-which is recovered from the base proof is shown below, where we have aggregated
-the different <em>signature</em> values.
+The <em>signature</em> recovered from the base proof and included in the
+derived proof is shown below, where we have aggregated the different
+<em>signature</em> values.
           </p>
           <pre class="example nohighlight" title="PQC Signatures" data-include="testVectors/pqc-sd/specificSignatures.json"
           data-include-format="text"></pre>
 
           <p>
-The final ouput, i,e, the signed derived document, from  [[[#SD-Derived]]] for
-each of our example cryptosuites is shown below.
+The final output, i.e., the signed derived document, from
+[[[VC-DATA-INTEGRITY-1.1#add-derived-proof]]] for each of our example
+cryptosuites is shown below.
           </p>
-          <pre class="example nohighlight" title="mldsa44-sd-2024 Derived " data-include="testVectors/pqc-sd/mldsa44-sd-2024/derivedRevealDocument.json"
+          <pre class="example nohighlight" title="mldsa44-sd-2024 Derived" data-include="testVectors/pqc-sd/mldsa44-sd-2024/derivedRevealDocument.json"
           data-include-format="text"></pre>
-          <pre class="example nohighlight" title="slhdsa128-sd-2024 Derived " data-include="testVectors/pqc-sd/slhdsa128-sd-2024/derivedRevealDocument.json"
+          <pre class="example nohighlight" title="slhdsa128-sd-2024 Derived" data-include="testVectors/pqc-sd/slhdsa128-sd-2024/derivedRevealDocument.json"
           data-include-format="text"></pre>
-          <pre class="example nohighlight" title="falcon512-sd-2024 Derived " data-include="testVectors/pqc-sd/falcon512-sd-2024/derivedRevealDocument.json"
+          <pre class="example nohighlight" title="falcon512-sd-2024 Derived" data-include="testVectors/pqc-sd/falcon512-sd-2024/derivedRevealDocument.json"
           data-include-format="text"></pre>
         </section>
 
