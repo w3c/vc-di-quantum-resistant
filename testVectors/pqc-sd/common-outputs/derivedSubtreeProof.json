@@ -1,0 +1,37 @@
+{
+  "treeSize": 20,
+  "leafIndexes": [
+    0,
+    1,
+    8,
+    13,
+    14,
+    15
+  ],
+  "subtreeProof": [
+    {
+      "node": "N_2_4",
+      "value": "8e83d17ea1230da27698659d5e5b02fb87eea9fc65b5dbbd4ad046f64332096d"
+    },
+    {
+      "node": "N_4_8",
+      "value": "338a50dc826bf2d8344ef87f89c3cd58b542ebe9c228a8b592c2bcb01eb59903"
+    },
+    {
+      "node": "Leaf9",
+      "value": "3f8a780704600e40345467e0e9bea00445c8fe14d94ca21e962687ff41a50848"
+    },
+    {
+      "node": "N_10_12",
+      "value": "75cd3664034938bd281e7183dce37ab73f4244de5e4d8d0246943906793382a9"
+    },
+    {
+      "node": "Leaf12",
+      "value": "a163cc771bdd83fccce41fa73819c5b21cb97002e9b11b78ec60ecf064de44e4"
+    },
+    {
+      "node": "N_16_20",
+      "value": "ee6adff105c56c997642fb0e9e50fd2a4c2c16744aaa3e8ea304f2d7b7623eb1"
+    }
+  ]
+}

@@ -1,55 +1,46 @@
 {
-  "salts": [
-    "8f12b1840b34fddd2fafeeb0ae9f5223",
-    "2d31854a63332a5b2b98f585fd2b181e",
-    "59c81ad004f9bc8c4f3188863660ed54",
-    "151c2088275d61e4d3060eac51b9dfda",
-    "7979ee1ec9144dc1c0235135a3839237",
-    "6e7a3332fafce91541e38f4d98197596",
-    "a6b5292c4720a1fa63908fc97b89dd8a",
-    "d437a29e45d7f8e7911e0a120b916764",
-    "4d4f3b599712d73a1e4d2c8cc2576bd8",
-    "2e701759107c70b8d8fdc8f48ef01ba5",
-    "59d9b136e1239cd6e4f3a8691771080b",
-    "e81ddda07df65b018b853bd2e12e3374",
-    "aebb14e77837208ec1983ddc3f379784",
-    "67a9b58a27a9bf0dc2e0ad94d6dd8c66",
-    "4b36a6b79702c1a6c3bf222442ef5c40",
-    "013accde466dc00fdfa676afb2156c7e",
-    "26111b2513f969e6188bbed641b06051",
-    "ba17df55784a9653d77b7f9a7a58ce0e",
-    "2cab107628c54db2dd281984323594d8",
-    "1c5a89e6f4929e4eceb2df3ce7c8f343"
+  "treeSize": 20,
+  "leafIndexes": [
+    0,
+    1,
+    8,
+    13,
+    14,
+    15
   ],
-  "saltedHashes": [
-    "dd29c61f75afd13de0a180e7662f3c2136fa4cb7c7f2666d002dacd57ffd2c3c",
-    "3f0ae9b79c353cf2a3e8aeaa86ffc8a40a72eb27fba76d09b4ecba58d1a8afb0",
-    "123add59487718aa0a30f6ee10525746f244d0099447299137dd7bafe94b0b25",
-    "f0fcde43af579a137fe9164028e48c3a46dc3ab6601877d710e75d4262b2d5a6",
-    "991a1cd298fe7af5c3543d732bbaa8895b5ebfa5a999d307eaac5563be8edba4",
-    "cc69be1237ac5dd246c0ce84fb98ea4c8194fa6dafe7235b7d9ce26877ba8686",
-    "1344141bbc875b3f41ecb886979ddf826045e08b3cd6d60a944a57b204ed2543",
-    "63971ce7ba557c6c490fc666f464c1fb8502e7eb25aba9cebfa82550a8cddd3e",
-    "e3725156cac30b43ab40e3f9ab9efffc903f4f83f3d55749d2e4688615da7560",
-    "501ca1a389b0501a08ac549d17930036780bdd27cb54d75f118fb6a4ce9d47dc",
-    "6c1c396d83ecbec86568555dc854cdbf661cdef9c308ff605db2e2a8aaf7fcb9",
-    "320262fcdcd5d25794ce2729468bbc78055b017d7c2ce8f0a37df6b628feeea6",
-    "6ede6459a15a56baa5a919fa61855a36c04aa21856e534695efabee3ae0088c5",
-    "2b798a917816630b71f6420d6312c6f5dc74b677de1d904f6eb9c60f9fa4a7a3",
-    "3f0065e22558334af2a5dc9539d2c8bf8ed875bd5e08f318734bc6169e9c44af",
-    "14c9ada85a8998a62449d0a881e9d46fa71dafbf558d53e5927d1440177f4df4",
-    "8d775f85c36ced386a991d85d6427912d8d12430055e005356ccf6b7afdc57b9",
-    "2e07e97cbbd244d55019ad3ef77e6748382e25897d24c7abbe324363e05f8b2d",
-    "6d6fd1fd31009b2011adbebcd51021b21367b6fd673faca2685c0d98584e6b07",
-    "ae9422737082e3aa11242d05bdb7f9592d6d373fec5328d6440232246cc43c12"
+  "filteredSalts": [
+    "9f0cd9b94097fe4929918d2b8942b344",
+    "c432e059c378eef7fe2f1181a4050836",
+    "fa3762f4ae812907b5b0f25da4dc60a0",
+    "d8c4c02accb6d6548dbe9f751da45bc0",
+    "5b364814fb7f740c677f3b992347eb19",
+    "15ac68a42c14d01dd868dbb043711c27"
+  ],
+  "subtreeProof": [
+    "8e83d17ea1230da27698659d5e5b02fb87eea9fc65b5dbbd4ad046f64332096d",
+    "338a50dc826bf2d8344ef87f89c3cd58b542ebe9c228a8b592c2bcb01eb59903",
+    "3f8a780704600e40345467e0e9bea00445c8fe14d94ca21e962687ff41a50848",
+    "75cd3664034938bd281e7183dce37ab73f4244de5e4d8d0246943906793382a9",
+    "a163cc771bdd83fccce41fa73819c5b21cb97002e9b11b78ec60ecf064de44e4",
+    "ee6adff105c56c997642fb0e9e50fd2a4c2c16744aaa3e8ea304f2d7b7623eb1"
   ],
   "labelMap": {
     "dataType": "Map",
     "value": [
-      ["c14n0", "u3Lv2QpFgo-YAegc1cQQKWJFW2sEjQF6FfuZ0VEoMKHg"],
-      ["c14n1", "u4YIOZn1MHES1Z4Ij2hWZG3R4dEYBqg5fHTyDEvYhC38"]
+      [
+        "c14n0",
+        "b0"
+      ],
+      [
+        "c14n1",
+        "b1"
+      ]
     ]
   },
-  "mandatoryIndexes": [0, 4, 5, 7],
-  "selectiveIndexes": [0, 1, 8, 13, 14, 15]
+  "mandatoryIndexes": [
+    0,
+    4,
+    5,
+    7
+  ]
 }
