@@ -1,0 +1,104 @@
+[
+  {
+    "mandatoryPointers": [
+      "/issuer"
+    ],
+    "mandatory": [
+      "<did:key:zDnaegE6RR3atJtHKwTRTWHsJ3kNHqFwv7n9YjTgmU7TyfU76> <https://schema.org/image> <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NgUPr/HwADaAIhG61j/AAAAABJRU5ErkJggg==> .\n",
+      "_:b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/citizenship#EmploymentAuthorizationDocumentCredential> .\n",
+      "_:b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.w3.org/2018/credentials#VerifiableCredential> .\n",
+      "_:b1 <https://www.w3.org/2018/credentials#issuer> <did:key:zDnaegE6RR3atJtHKwTRTWHsJ3kNHqFwv7n9YjTgmU7TyfU76> .\n"
+    ],
+    "nonMandatory": [
+      "_:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .\n",
+      "_:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/citizenship#EmployablePerson> .\n",
+      "_:b0 <https://schema.org/additionalName> \"JACOB\" .\n",
+      "_:b0 <https://schema.org/birthDate> \"1999-07-17\"^^<http://www.w3.org/2001/XMLSchema#dateTime> .\n",
+      "_:b0 <https://schema.org/familyName> \"SMITH\" .\n",
+      "_:b0 <https://schema.org/gender> \"Male\" .\n",
+      "_:b0 <https://schema.org/givenName> \"JOHN\" .\n",
+      "_:b0 <https://schema.org/image> <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2Ng+M/wHwAEAQH/7yMK/gAAAABJRU5ErkJggg==> .\n",
+      "_:b0 <https://w3id.org/citizenship#birthCountry> \"Bahamas\" .\n",
+      "_:b0 <https://w3id.org/citizenship#employmentAuthorizationDocument> _:b2 .\n",
+      "_:b0 <https://w3id.org/citizenship#residentSince> \"2015-01-01\"^^<http://www.w3.org/2001/XMLSchema#dateTime> .\n",
+      "_:b1 <https://schema.org/description> \"Example Employment Authorization Document.\" .\n",
+      "_:b1 <https://schema.org/name> \"Employment Authorization Document\" .\n",
+      "_:b1 <https://www.w3.org/2018/credentials#credentialSubject> _:b0 .\n",
+      "_:b1 <https://www.w3.org/2018/credentials#validFrom> \"2019-12-03T00:00:00Z\"^^<http://www.w3.org/2001/XMLSchema#dateTime> .\n",
+      "_:b1 <https://www.w3.org/2018/credentials#validUntil> \"2029-12-03T00:00:00Z\"^^<http://www.w3.org/2001/XMLSchema#dateTime> .\n",
+      "_:b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/citizenship#EmploymentAuthorizationDocument> .\n",
+      "_:b2 <https://schema.org/identifier> \"83627465\" .\n",
+      "_:b2 <https://w3id.org/citizenship#lprCategory> \"C09\" .\n",
+      "_:b2 <https://w3id.org/citizenship#lprNumber> \"999-999-999\" .\n"
+    ],
+    "hmacKeyString": "748064337E1DAB50150F8EEFA58595EB192ADDE3BE6FE9325FC39BABC931FF4E",
+    "labelMap": {
+      "dataType": "Map",
+      "value": [
+        [
+          "c14n0",
+          "b1"
+        ],
+        [
+          "c14n1",
+          "b0"
+        ],
+        [
+          "c14n2",
+          "b2"
+        ]
+      ]
+    }
+  },
+  {
+    "mandatoryPointers": [
+      "/issuer"
+    ],
+    "mandatory": [
+      "<did:key:zDnaegE6RR3atJtHKwTRTWHsJ3kNHqFwv7n9YjTgmU7TyfU76> <https://schema.org/image> <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NgUPr/HwADaAIhG61j/AAAAABJRU5ErkJggg==> .\n",
+      "_:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/citizenship#EmploymentAuthorizationDocumentCredential> .\n",
+      "_:b0 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://www.w3.org/2018/credentials#VerifiableCredential> .\n",
+      "_:b0 <https://www.w3.org/2018/credentials#issuer> <did:key:zDnaegE6RR3atJtHKwTRTWHsJ3kNHqFwv7n9YjTgmU7TyfU76> .\n"
+    ],
+    "nonMandatory": [
+      "_:b0 <https://schema.org/description> \"Example Employment Authorization Document.\" .\n",
+      "_:b0 <https://schema.org/name> \"Employment Authorization Document\" .\n",
+      "_:b0 <https://www.w3.org/2018/credentials#credentialSubject> _:b1 .\n",
+      "_:b0 <https://www.w3.org/2018/credentials#validFrom> \"2019-12-03T00:00:00Z\"^^<http://www.w3.org/2001/XMLSchema#dateTime> .\n",
+      "_:b0 <https://www.w3.org/2018/credentials#validUntil> \"2029-12-03T00:00:00Z\"^^<http://www.w3.org/2001/XMLSchema#dateTime> .\n",
+      "_:b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://schema.org/Person> .\n",
+      "_:b1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/citizenship#EmployablePerson> .\n",
+      "_:b1 <https://schema.org/additionalName> \"JACOB\" .\n",
+      "_:b1 <https://schema.org/birthDate> \"1999-07-17\"^^<http://www.w3.org/2001/XMLSchema#dateTime> .\n",
+      "_:b1 <https://schema.org/familyName> \"SMITH\" .\n",
+      "_:b1 <https://schema.org/gender> \"Male\" .\n",
+      "_:b1 <https://schema.org/givenName> \"JOHN\" .\n",
+      "_:b1 <https://schema.org/image> <data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2Ng+M/wHwAEAQH/7yMK/gAAAABJRU5ErkJggg==> .\n",
+      "_:b1 <https://w3id.org/citizenship#birthCountry> \"Bahamas\" .\n",
+      "_:b1 <https://w3id.org/citizenship#employmentAuthorizationDocument> _:b2 .\n",
+      "_:b1 <https://w3id.org/citizenship#residentSince> \"2015-01-01\"^^<http://www.w3.org/2001/XMLSchema#dateTime> .\n",
+      "_:b2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://w3id.org/citizenship#EmploymentAuthorizationDocument> .\n",
+      "_:b2 <https://schema.org/identifier> \"83627465\" .\n",
+      "_:b2 <https://w3id.org/citizenship#lprCategory> \"C09\" .\n",
+      "_:b2 <https://w3id.org/citizenship#lprNumber> \"999-999-999\" .\n"
+    ],
+    "hmacKeyString": "D536530A5DB8CC94879E61A26E83DF38D251CA111AF1437A57F985374E5E84EA",
+    "labelMap": {
+      "dataType": "Map",
+      "value": [
+        [
+          "c14n0",
+          "b0"
+        ],
+        [
+          "c14n1",
+          "b1"
+        ],
+        [
+          "c14n2",
+          "b2"
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,64 @@
+[
+  {
+    "@context": [
+      "https://www.w3.org/ns/credentials/v2",
+      "https://w3id.org/citizenship/v4rc1"
+    ],
+    "type": [
+      "VerifiableCredential",
+      "EmploymentAuthorizationDocumentCredential"
+    ],
+    "issuer": {
+      "id": "did:key:zDnaegE6RR3atJtHKwTRTWHsJ3kNHqFwv7n9YjTgmU7TyfU76",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NgUPr/HwADaAIhG61j/AAAAABJRU5ErkJggg=="
+    },
+    "validFrom": "2019-12-03T00:00:00Z",
+    "validUntil": "2029-12-03T00:00:00Z",
+    "credentialSubject": {
+      "type": [
+        "Person",
+        "EmployablePerson"
+      ],
+      "birthCountry": "Bahamas"
+    },
+    "proof": {
+      "type": "DataIntegrityProof",
+      "cryptosuite": "sqisign1-sd-2024",
+      "created": "2026-04-15T23:36:38Z",
+      "verificationMethod": "did:key:uriTuLwWFBP30QGUZhhXsBSBWspERfapNvQ1QsHetEqe_7sOe4Lb4welJA6vg8enZKkuzd1jZS3V9abZyruw4PrRxWLi76yLVHuxtEdidQN0HgNEkBw",
+      "proofPurpose": "assertionMethod",
+      "proofValue": "u2V0BhVjIUaYE5KMnvA2U-s_1VYcTgt8iplOAOUdNrR1jJzc95_SFtFoQagEsnRB6de6McQ6Soah7HHOZp1iPG7cgA_naG-N46OmWTKqSZSaUGJiSafnjKneIrWeZULETJIRE6rnegkxTibdPo4BNOAUiDW29bISBNX5N_T0Jjp90IgCVHR6VDmk1q609U27Nwmhth6q7shHZKROwBFGsWyeoL0nnCzMQWpeOLfKReXSxVbwBLTzouWmAYwpp-397ueQfQWxvzg0LePvEBQJYVa4kY628-vyW6qjBZxV-v_UCbraP36IY5wNXlnZM8SC32EBfRqZOEVOSoCQcyX2BZS-rPdUg8uXqa8D7G9HGAKX7dIUA41E7s_DCh3EiYrAZ6Aq4JReGWMjSJ1fdav78INiBqU1G-Edoh5x1i_eZPscosb3WM1633-0JQCa4kJgIA-BDJ3SzqjDI55mPIpPuXsuhyX2YX0aW7jGkZeytIPTyqUyfaNlotlMukYDqfCiylu9Et5vgbRHOkeCt6fz63LboCvr2WyRuEPAwB5T_X2pMl28CL26jKk2LaD_HOoIcAFs2RHjqSXOzS0Tdnt4B8i4Bx08qgxVFpwl71nSb9hWaj94xuBQ-8kHMUELhPYLWbKmBmM3RoWM3o9Zam5oTBFjIbVhWVa4GGU_6aS3AUkbnko1jqlQ_7NSI4phKjszMVRGJ8kdwRPvErwL8bZAbrpCeZSeFxbBT8BOk7xyJexCFHAqA_eazWk058IG9TAhX4dQrLuJ7Jd0wHb76g6ptkPorcutnw5sI0lGTbA-7V3H7Cmi1wV615KpZ_U0tfmTQ24Y63zwolRqxF0Kh0qh_BfI6k12aL96cFnwUjeY9Ja3e5e4goq7wMGezJ-_Vt8GUG8j6rCeJIi-lFx4Tq8i1FUzPm53W2W3FBwJYyJCyHC5qWZsahEkaqdFTat6ylqKUGYoPKzKOfDUXjOeviSDQVhQluVEStkRC1zu8iEaxRgsr17sJ_l1LHg1UYxu9WQlvJJlb7B2nyhSCwYugJSs3myJDSENgHKXPLCgG_kFV9EzGkSJjGcUFa6ohsMLlMpFaA1-gH_jyhk0Hlpvpac87O27c-B7gVEZSRmGwtJM_4Hb-o8MrhcX_jC3HSrq1bRzsWahVDN16f8I42m7z5nsJcWAzLh0da0q5bptY_1w9M_B-IwIHWMhmX55x5WHz-6_gZMDcSi6yNeYJuqJdjHawmnNZjSdo_mwqhozcMbK_A0yO53_nUpE7L1VvzAcLOht3cXYoOdVRd_kvysp_6XyauMutDv5Ps2Ml_RQBY01CVJdtiu8Fl0zJ60KxMzl8oga3CJMj8OGmvvgXtk8DAmQQQuUpMrypK7Equh2T_IseEubSTKuIA2cqjOQ26MgezZY09LQL3vSCpBIXc_y5XEz8lEYtChpnqJmET59mFC6VYPVw6DI-T8gyPqqp71wFAljIEnSSx4SbS5Ux8BpGQoftBReVS9bHB1PMH_W-_tamM4ZrL-PbXI0OjAteE3X2CFeYW8QMNbYkRPfx3GJcD_R2ZSrsnIzjy3hei5E8NT_baWJSJQf3J7l3tKlgHQ6TJAthXhyM57WfiHBLhgpreAjCFcHmICsIPPGNOxmL8E_IeS1Q4XAMPp6sIXW_ToIzfSuDzuRdTUoYGonjMI0MH-vbohpP_oUqHW3OAa_96gggsEGzWLojtjdpIx9sCpCXp2MGW_WcUyC4BAZYyFDGRVkr3OEzvk3PsGmlHvYjGI9ERsmg30P9sccezv3jkeq41z21ErQOdYYCopO1NV4RdcHp8cH23jxP6TbPN21FuJX0BNASEag2bxQOwIx9wCw-a-ZexG5fpzrmcDtxg9oYmO-BF_MWAf4Oa4s9B1YcQFqSKC-ezSf9_izeJ9jp2HqyJc827Lu_TbbBsrJuN83ZpyXhCcNqpp5TPw2fkv9MiMQMNOqt0s5UTKl6l1W9-JxUCRsjN27GCtW4x8Vgz85Ed-fIMwQCogABAQCEAAECBA"
+    }
+  },
+  {
+    "@context": [
+      "https://www.w3.org/ns/credentials/v2",
+      "https://w3id.org/citizenship/v4rc1"
+    ],
+    "type": [
+      "VerifiableCredential",
+      "EmploymentAuthorizationDocumentCredential"
+    ],
+    "issuer": {
+      "id": "did:key:zDnaegE6RR3atJtHKwTRTWHsJ3kNHqFwv7n9YjTgmU7TyfU76",
+      "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIW2NgUPr/HwADaAIhG61j/AAAAABJRU5ErkJggg=="
+    },
+    "validFrom": "2019-12-03T00:00:00Z",
+    "validUntil": "2029-12-03T00:00:00Z",
+    "credentialSubject": {
+      "type": [
+        "Person",
+        "EmployablePerson"
+      ],
+      "birthCountry": "Bahamas"
+    },
+    "proof": {
+      "type": "DataIntegrityProof",
+      "cryptosuite": "sqisign1-sd-2024",
+      "created": "2026-04-15T23:36:38Z",
+      "verificationMethod": "did:key:uriTuLwWFBP30QGUZhhXsBSBWspERfapNvQ1QsHetEqe_7sOe4Lb4welJA6vg8enZKkuzd1jZS3V9abZyruw4PrRxWLi76yLVHuxtEdidQN0HgNEkBw",
+      "proofPurpose": "assertionMethod",
+      "proofValue": "u2V0BhVjIYIUmwn5azZt_cMHhhZLMrIilextSr8yVcJ7g8spzF4Qxi95xHVlPdCWhfdB_GKtys51BmbPb1S3-5-bJ737Tw0O2jCyOukz1hE_aqMZv_mk4KyNRZaCuzej44DievFLV9kDXgr12GKXIfwVGMyxG5-5uz72UIRXcwBxYxRUOrPdDhJES4mzdO9LR7UdPWN5IFbOyV4eS7LmN_clxNIXVJGfg_H0gYnYMPMrJ2vMbApGnMOD2IhH-DflZNrnwkZRjM5AWrcGXBQJYVa4k1kLNNIfDprRi6hn4H0QOUWDaffzfkB7sSVylnd1jIiC0jumVsrjx_BEq03QwBMAK1tpnqnP1HS3qp61dI9GubO8FrgkP85WxBuYE2hS3P-ivJASGWMgFqJjs78LlTqSj1xuvKZUYwPXJwztJ5N4ZceV6bxpL5K1_pPWDAl2DGFNFdVEweU_-XqhEJoMqfb76MpyGbhRkXNRrnsH2X9xZs7x9vlixe9srtRha0fljJuCBm4SfMEZhvRCg_a3VYm6vALe5ljEkL-ppGg_i3Ih5CHexgpRPhxGSewOUdb4cvICb4qEYSxHoBDpeZC79OkpQ2wQk52UH8Yqr4eqQrt202L_LmjV2clDuFvkwIonUsZYIoEhkXdKcZbT2LNMKBVjIFhHOHNcX9JEYMEDGPOWucglAsOF65vvEpJ8MdVZFBU7szZk8nUZByQpULqYnapUfq1Ks_jVayg5mNxqrGfyKseDqURygFzPDsnbIEfGOT2tbLdUt7krIiCCAzCRX4x2xaeMEPfNLlosM2RpjIhy61vxUjFKdn0ZcLmu2eQHUV3x6F34unOVS-CziN81Kh03v0mNBNLcPIMV7md2xMWfF-ieWJ1z6AoUa785ohXTMxNcyqtD33TKALhFpZkIFARzXRuCzmI4pBQtYyORxYURNlpTbGAboZOCbXaAqhGslEuIwBazuEvM3IdOfzkHXeZ_K2nodxmooGwPC81w7PvTvMpgHmM6z-rbsCpctzBiUef6kwQpvWvc8jncayiY-IniE5UACEZGrkkqeIakqujVXGFZtySQEU6wfCjJfp1byxkGHY4wKvcsB2BUCp5U9Ei3jlNt2LxSglFTl-QCt2uW07--Bd5Q38Qj08VBSJUcXKj7DAFcBjVrjnVjDzGxxgaYUGGqJIBwDn-mDEFGCZZi-lQQNWMgrWgugTCE7Y2TjAUVc521IQ_2G2FmN3n3SE_2ZbwxQNHNY1Dm8OwIIG0X0vnOGR8rphL7MO2Spa4hRzAag6WzQeBHf_tqlhhhWIka9wQjYwmotOWzqT9j0kZKxUYg2mORUOBq2pG2_YfyQCzDP5eIK31ORD-Ry1OYsW7Snw2MKK8GmoQiy4SaTh59zR5ToX5d_H08feG6vEFhS2HI4zwJiIJzY8ZVGvbpsXxJxT8MCWEYa_IRWGXpplXeCAyxnC4o9Iwr94DsCAljIMah_oTTrBOsYp_UJTfiZZChZjshvnmr9BHEM_HDHtC3OemnK9QdkFBqUejJM1HvRIRjP2B9qNMxIsxzLnI8g7vAOo1648gAkeUbAw-pJVrmZLjDtT9RE-vlfjR57H8r5xRUcVFdqHnZvlh6Pjlg8pSxikT_-0orM2bYHf9evuRyQlB4wgfbSHFPoGpUCG5XfQCbYKcU5kkYI7KV4AHcFxIszGFqlhX3c_SGiwmhlpICwvQyLJiEJPpnL0zsfBfvR5YdnPkJzBgVYyHPxKg7161VK315DKou6gmjUZrLAUOwZKjeQRF78y5Cx3Imc3zbhqoEP9RFptuO_JepisEsv5kaHBz-etWNTVertmjNNvsUnCDLPDR9CbMYPCiR4QzhhOYVV-74YJK_A6nAe9vYChfQI2tcHWcP3Yiy76dqxPGqDZJlIDJHndUzBWa3iG_MxO1PGmu9vo2SqDf4j2kM43ooAWMs-swsOFgM-cNqh4-hP9OSUpXMNnZzqh_kc4CsjeZkiXk7GDyAtLFQSctin1gUHogACAQCEAAECBA"
+    }
+  }
+]
